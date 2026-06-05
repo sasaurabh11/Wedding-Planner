@@ -116,7 +116,6 @@ export async function POST(request: NextRequest) {
   const prompt = buildPrompt(formData);
 
   try {
-    // Force JSON output via responseMimeType — prevents Gemini from adding prose
     const jsonModel = genAI.getGenerativeModel({
       model: "gemma-4-31b-it",
       generationConfig: { responseMimeType: "application/json" },
